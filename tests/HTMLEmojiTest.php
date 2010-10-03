@@ -1,9 +1,11 @@
 <?php
+require_once 'HTML/Emoji.php';
 class HTMLEmojiTest extends PHPUnit_Framework_TestCase
 {
-  public function testFail()
+  public function testInit()
   {
-    $this->fail('initial fail');
+    $emoji = HTML_Emoji::getInstance('docomo');
+    $this->assertEquals($emoji->isSjisCarrier(), true, 'sjisなキャリアであること');
   }
 }
 ?>
